@@ -1,0 +1,29 @@
+.name-input {
+  height: 3rem;
+}
+
+.ring {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: 10px solid rgb(0, 0, 0, 0.2);
+  border-left: 10px solid #4885ed;
+  animation: 1000ms ring-animation linear infinite;
+}
+
+@keyframes ring-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  height: 150px;
+  width: 200px;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+}
