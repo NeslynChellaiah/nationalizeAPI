@@ -52,11 +52,11 @@ responseDiv.classList.add(
 );
 body.append(responseDiv);
 
-let loaderContainer = document.createElement("div")
-loaderContainer.classList.add("container", "ring-container")
-let loaderRing  = document.createElement("div")
-loaderRing.classList.add("ring")
-loaderContainer.append(loaderRing)
+let loaderContainer = document.createElement("div");
+loaderContainer.classList.add("container", "ring-container");
+let loaderRing = document.createElement("div");
+loaderRing.classList.add("ring");
+loaderContainer.append(loaderRing);
 
 const search = async () => {
   let name = document.querySelector(".name-input").value;
@@ -70,14 +70,22 @@ const search = async () => {
 
   var response;
   try {
-    responseDiv.classList.add('justify-content-center' ,'align-items-center', 'd-flex')
-    responseDiv.append(loaderContainer)
+    responseDiv.classList.add(
+      "justify-content-center",
+      "align-items-center",
+      "d-flex"
+    );
+    responseDiv.append(loaderContainer);
     response = await fetch(`https://api.nationalize.io/?name=${name}`);
     response = await response.json();
   } catch {
     alert("Something went wrong");
   }
-  responseDiv.classList.remove('justify-content-center' ,'align-items-center', 'd-flex')
+  responseDiv.classList.remove(
+    "justify-content-center",
+    "align-items-center",
+    "d-flex"
+  );
   responseDiv.innerHTML = "";
 
   if (response.country) {
